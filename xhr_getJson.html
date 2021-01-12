@@ -1,0 +1,21 @@
+<script type="text/javascript">
+function getJSON() {
+    var xhr = new XMLHttpRequest();
+    var API_URL = 'https://localhost/prj/shop/goods/test.json';
+    xhr.addEventListener('loadend', function () {
+        if (xhr.status === 0) {
+            alert("failed");
+        }
+        // 通信成功
+        else {
+            alert(xhr.response);
+        }
+    });
+    xhr.open("POST", API_URL, true);
+    xhr.setRequestHeader('Accept', 'application/x-www-form-urlencoded');
+	  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=utf-8');
+    xhr.send();
+}
+</script>
+
+<input type="button" value="JSONファイルを取得する" onclick="getJSON()" />
