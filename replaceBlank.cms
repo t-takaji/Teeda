@@ -1,0 +1,16 @@
+/* 
+ * 商品csvなどの"、=を削除する
+ */
+
+// 「=」 取得
+equal = left([1,1],1);
+// 「"」 取得
+quotes = right([1,1],1);
+blank = "";
+
+for (y = 1; y<=Bottom; y++) {
+　for (x = 1; x<=Right; x++) {
+　　[x,y] = replace([x,y], equal, blank);
+　　[x,y] = replace([x,y], quotes, blank);
+　}
+}
